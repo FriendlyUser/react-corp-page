@@ -1,6 +1,7 @@
 import './preloader.css'
 import './app.css'
 import { initializeIcons } from 'office-ui-fabric-react/lib-commonjs/Icons'
+import ThemeProvider from '../components/ThemeProvider'
 initializeIcons(undefined, { disableWarnings: true })
 type AppProps = {
   Component: any,
@@ -14,9 +15,8 @@ if(typeof window !== 'undefined') {
   hideLoader = () => loader.classList.add('loader--hide')
 } 
 
-
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }: AppProps) {
   hideLoader()
-  return <Component {...pageProps} />
+  return <ThemeProvider> <Component {...pageProps} /> </ThemeProvider>
 }

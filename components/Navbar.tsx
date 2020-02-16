@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useEffect, useContext } from 'react'
 import { CommandBar, ICommandBarItemProps } from 'office-ui-fabric-react/lib-commonjs/CommandBar'
 import { CommandBarButton, IButtonProps } from 'office-ui-fabric-react/lib-commonjs/Button'
 import { DirectionalHint } from 'office-ui-fabric-react/lib-commonjs/Callout'
@@ -16,7 +16,7 @@ import {
   loadTheme
 } from "office-ui-fabric-react"
 
-let currentTheme = dark
+let currentTheme = light
 loadTheme(currentTheme)
 
 const theme = getTheme()
@@ -33,26 +33,6 @@ const menuStyles: Partial<IContextualMenuStyles> = {
 }
 
 
-let _farItems: ICommandBarItemProps[] = [
-  {
-    key: 'tile',
-    text: 'Grid view',
-    // This needs an ariaLabel since it's icon-only
-    ariaLabel: 'Grid view',
-    iconOnly: true, 
-    iconProps: { iconName: currentTheme === dark ? 'Sunny' : 'ClearNight' },
-    onClick: () => { 
-      toggleTheme()
-    }
-  }
-]
-
-const toggleTheme = () => {
-  currentTheme = currentTheme === light ? dark : light;
-  // simple approach to switching icons
-  _farItems[0].iconProps = { iconName: currentTheme === dark ? 'Sunny' : 'ClearNight' }
-  loadTheme(currentTheme)
-}
 
 
 // Custom renderer for main command bar items
@@ -91,20 +71,6 @@ const overflowProps: IButtonProps = {
   }
 }
 
-const Navbar: React.FunctionComponent = () => {
-  return (
-    <CommandBar
-      overflowButtonProps={overflowProps}
-      // Custom render all buttons
-      buttonAs={CustomButton}
-      items={_items}
-      overflowItems={_overflowItems}
-      farItems={_farItems}
-      ariaLabel="Use left and right arrow keys to navigate between commands"
-    />
-  )
-}
-
 const _items: ICommandBarItemProps[] = [
   {
     key: 'newItem',
@@ -133,4 +99,40 @@ const _overflowItems: ICommandBarItemProps[] = [
   { key: 'rename', text: 'Rename...', onClick: () => console.log('Rename'), iconProps: { iconName: 'Edit' } }
 ]
 
-export default Navbar 
+import {Context} from './ThemeProvider'
+export const Navbar: React.FunctionComponent = () => {
+  const [state, dispatch] = useContext(Context);
+  console.log(state)
+
+  useEffect(() => {
+    console.log(state)
+  })
+  let _farItems: ICommandBarItemProps[] = [
+    {
+      key: 'tile',
+      text: 'Grid view',
+      // This needs an ariaLabel since it's icon-only
+      ariaLabel: 'Grid view',
+      iconOnly: true, 
+      iconProps: { iconName: currentTheme === dark ? 'Sunny' : 'ClearNight' },
+      onClick: () => { 
+        currentTheme = currentTheme === light ? dark : light;
+        // simple approach to switching icons
+        _farItems[0].iconProps = { iconName: currentTheme === dark ? 'Sunny' : 'ClearNight' }
+        loadTheme(currentTheme)
+        dispatch({type: 'SET_THEME', payload: currentTheme})
+      }
+    }
+  ]
+  return (
+    <CommandBar
+      overflowButtonProps={overflowProps}
+      // Custom render all buttons
+      buttonAs={CustomButton}
+      items={_items}
+      overflowItems={_overflowItems}
+      farItems={_farItems}
+      ariaLabel="Use left and right arrow keys to navigate between commands"
+    />
+  )
+}
