@@ -16,7 +16,8 @@ class MyDocument extends Document {
               key="viewport"
             />
             <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800|Sriracha&display=swap" rel="stylesheet"></link>
-            <link rel="stylesheet" href="/fabric-10.1.0.min.css"></link>
+            <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
+            <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css" />
         </Head>
         <body>
           <div id='loader'></div>
