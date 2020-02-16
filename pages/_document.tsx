@@ -1,31 +1,37 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import * as React from 'react';
+import Document, { Head, Main, NextScript } from 'next/document';
+import { Stylesheet, InjectionMode, resetIds } from 'office-ui-fabric-react';
 
-class MyDocument extends Document {
-  static async getInitialProps(ctx: any) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+interface Props {
+  styleTags: any
+}
+export default class MyDocument extends Document<Props> {
+  static getInitialProps({ renderPage }: any) {
+    const stylesheet = Stylesheet.getInstance();
+    stylesheet.setConfig({
+        injectionMode: InjectionMode.none,
+        namespace: 'server'      
+    });
+    stylesheet.reset();
+    resetIds();
+
+    const page = renderPage((App: any) => (props: any) => <App {...props} />);
+    
+    return { ...page, styleTags: stylesheet.getRules(true) };
   }
 
   render() {
     return (
-      <Html>
-        <Head>
-          <meta
-              name="viewport"
-              content="initial-scale=1.0, width=device-width"
-              key="viewport"
-            />
-            <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800|Sriracha&display=swap" rel="stylesheet"></link>
-            <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/10.1.0/css/fabric.min.css"></link>
+      <html>
+        <Head>       
+          <style type="text/css" dangerouslySetInnerHTML={{__html: this.props.styleTags}} />          
         </Head>
         <body>
           <div id='loader'></div>
           <Main />
           <NextScript />
         </body>
-      </Html>
-    )
+      </html>
+    );
   }
 }
-
-export default MyDocument

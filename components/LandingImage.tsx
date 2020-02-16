@@ -1,10 +1,12 @@
 
 import React, {useContext} from 'react';
 import {Context} from './ThemeProvider'
-export const LandingAnimatedText: React.FunctionComponent = () => {
+import {dark} from '../theme/dark'
+import {light} from '../theme/light'
+export const LandingAnimatedText: React.FunctionComponent = (props: any) => {
     return (
       <>
-        <h3 style={{ fontSize: '3rem' }}>
+        <h3 style={{ fontSize: '3rem', color: props.mainColor }}>
           Corporate Landing Page
         </h3>
       </>
@@ -13,26 +15,33 @@ export const LandingAnimatedText: React.FunctionComponent = () => {
 
 export const LandingHeroImageBG: React.FunctionComponent = () => {
   const [state, dispatch] = useContext(Context);
-  const {theme} = state
-  let mainColor
+  const {theme=dark} = state
+  let titleColor
   try {
-    mainColor = theme.palette.primaryColor
+    if (theme === dark) {
+      titleColor= theme.palette.themePrimary
+    } else {
+      titleColor= theme.palette.neutralLighter
+    }
   } catch(err) {
-    mainColor = 'white'
+    titleColor = '#2b88d8'
   }
-  console.log(theme)
   return (
     <div className="ms-Grid-row" style={{ position: 'relative' }}>
-      <div className="ms-Grid" dir="rtl" style={{
+      <div className="ms-Grid" dir="ltr" style={{
         position: 'absolute',
         zIndex: 5,
-        color: mainColor,
         minHeight: '400px',
         width: '100%',
-        top: '35%'
+        top: '50px'
       }}>
         <div className="ms-Grid-col ms-sm12">
-          <LandingAnimatedText />
+          <h3 style={{ fontSize: '3rem', color: titleColor, textAlign:'center', marginTop: 0, marginBottom: 0 }}>
+            Corporate Landing Page
+          </h3>
+          <h5 style={{ fontSize: '1.5rem', color: titleColor, textAlign: 'center', marginTop: 0, marginBottom: 0 }}>
+            I do not have a company, but if I did I would use Corporate Landing Page.
+          </h5>
         </div>
       </div>
       <div style={{

@@ -27,9 +27,9 @@ export const Navbar: React.FunctionComponent = () => {
   let _farItems: ICommandBarItemProps[] = [
     {
       key: 'tile',
-      text: 'Grid view',
+      text: 'Toggle Theme',
       // This needs an ariaLabel since it's icon-only
-      ariaLabel: 'Grid view',
+      ariaLabel: 'Toggle Theme',
       iconOnly: true, 
       iconProps: { iconName: currentTheme === dark ? 'Sunny' : 'ClearNight' },
       onClick: () => { 
