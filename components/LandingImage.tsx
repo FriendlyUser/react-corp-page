@@ -13,13 +13,20 @@ export const LandingAnimatedText: React.FunctionComponent = () => {
 
 export const LandingHeroImageBG: React.FunctionComponent = () => {
   const [state, dispatch] = useContext(Context);
-  console.log(state)
+  const {theme} = state
+  let mainColor
+  try {
+    mainColor = theme.palette.primaryColor
+  } catch(err) {
+    mainColor = 'white'
+  }
+  console.log(theme)
   return (
     <div className="ms-Grid-row" style={{ position: 'relative' }}>
       <div className="ms-Grid" dir="rtl" style={{
         position: 'absolute',
         zIndex: 5,
-        color: 'white',
+        color: mainColor,
         minHeight: '400px',
         width: '100%',
         top: '35%'

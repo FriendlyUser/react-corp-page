@@ -13,24 +13,35 @@ const toggleTheme = () => {
   return currentTheme
 }
 
+const setTheme = (isDark: Boolean) => {
+  if (isDark) {
+    currentTheme = dark
+  } else {
+    currentTheme = light
+  }
+  loadTheme(currentTheme)
+  return currentTheme
+}
+
 const Reducer = (state: any, action: any) => {
+  let newTheme = dark
   switch (action.type) {
       case 'SET_LIGHT':
-        toggleTheme
         return {
             ...state,
-            posts: action.payload
+            theme: newTheme
         };
       case 'SET_DARK':
+        newTheme = setTheme(true)
         return {
             ...state,
-            posts: state.posts.concat(action.payload)
-        };
+            theme: newTheme
+        }
       case 'SET_THEME':
-        const theme = toggleTheme()
+        newTheme = toggleTheme()
         return {
             ...state,
-            theme: theme
+            theme: newTheme
         };
       case 'SET_ERROR':
           return {
