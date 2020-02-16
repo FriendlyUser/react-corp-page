@@ -16,7 +16,7 @@ class MyDocument extends Document {
               key="viewport"
             />
             <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800|Sriracha&display=swap" rel="stylesheet"></link>
-            <link rel="stylesheet" href="/fabric.min.css"></link>
+            <link rel="stylesheet" href="/fabric-10.1.0.min.css"></link>
         </Head>
         <body>
           <div id='loader'></div>
