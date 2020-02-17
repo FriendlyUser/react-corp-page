@@ -35,7 +35,9 @@ export const DocumentCardBasicExample: React.SFC<DocumentProps> = () => {
         aria-label="Default Document Card with large file name. Created by Annie Lindqvist a few minutes ago."
         style={cardStyle}
       >
-        <DocumentCardLogo {...logoProps1} />
+        <div style={{textAlign: 'center'}}>
+          <DocumentCardLogo {...logoProps1} />
+        </div>
         <DocumentCardDetails>
           <DocumentCardTitle title="Providing Value" shouldTruncate />
           <DocumentCardTitle title="Committed to provided consistent and quality service to all our customers" showAsSecondaryTitle />
@@ -45,7 +47,9 @@ export const DocumentCardBasicExample: React.SFC<DocumentProps> = () => {
         aria-label="Default Document Card with large file name. Created by Annie Lindqvist a few minutes ago."
         style={cardStyle}
       >
-        <DocumentCardLogo {...logoProps2} />
+        <div style={{textAlign: 'center'}}>
+          <DocumentCardLogo {...logoProps2} />
+        </div>
         <DocumentCardDetails>
           <DocumentCardTitle title="Affordable" shouldTruncate />
           <DocumentCardTitle title="A fantastic service that your business needs today." showAsSecondaryTitle />
@@ -55,7 +59,9 @@ export const DocumentCardBasicExample: React.SFC<DocumentProps> = () => {
         aria-label="Default Document Card with large file name. Created by Annie Lindqvist a few minutes ago."
         style={cardStyle}
       >
-        <DocumentCardLogo {...logoProps3} />
+        <div style={{textAlign: 'center'}}>
+          <DocumentCardLogo {...logoProps3} />
+        </div>
         <DocumentCardDetails>
           <DocumentCardTitle title="Toggably" shouldTruncate />
           <DocumentCardTitle title="Companies that make their logos toggles need toggable websites." showAsSecondaryTitle />

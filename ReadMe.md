@@ -5,4 +5,9 @@ The is mainly a learning project for me, learning how to add key animations and 
 Learned don't use git lfs if you are serving files from a static site generator, only binaries, not required to run repo.
 
 
-Using microsoft fabric and server side rendering is a bit of a pain
+Using microsoft fabric and server side rendering is a bit of a pain.
+
+#### References
+
+* https://codeburst.io/global-state-with-react-hooks-and-context-api-87019cc4f2cf
+* https://github.com/OfficeDev/office-ui-fabric-react/wiki/Server-side-rendering-and-browserless-testing

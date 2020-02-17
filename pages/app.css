@@ -27,3 +27,20 @@ body, html {
   from, to { border-color: transparent }
   50% { border-color: orange; }
 }
+
+.stats-wrapper {
+  display: flex;
+}
+.card-image-section {
+  width: 50%;
+}
+
+/* Info Section Styles */
+@media only screen and (max-width: 768px) {
+  .card-image-section {
+    width: 100%;
+  }
+  .stats-wrapper {
+    display: block;
+  }
+}
