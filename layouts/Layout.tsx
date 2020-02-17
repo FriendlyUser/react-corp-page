@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import Head from 'next/head'
-import { Navbar } from './Navbar'
+import { Navbar } from '../components/navigation/Navbar'
 import { dark } from "../theme/dark"
-import {Context} from './ThemeProvider'
+import {Context} from '../theme/ThemeProvider'
 type LayoutProps = {
   children: Array<JSX.Element>|JSX.Element,
   title: string,

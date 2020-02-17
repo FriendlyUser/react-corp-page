@@ -1,7 +1,7 @@
 import './preloader.css'
 import './app.css'
 import { initializeIcons } from 'office-ui-fabric-react/lib-commonjs/Icons'
-import ThemeProvider from '../components/ThemeProvider'
+import ThemeProvider from '../theme/ThemeProvider'
 initializeIcons(undefined, { disableWarnings: true })
 type AppProps = {
   Component: any,

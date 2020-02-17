@@ -1,8 +1,8 @@
 
 import React, {useContext} from 'react';
-import {Context} from './ThemeProvider'
-import {dark} from '../theme/dark'
-import {light} from '../theme/light'
+import {Context} from '../../theme/ThemeProvider'
+import {dark} from '../../theme/dark'
+import {light} from '../../theme/light'
 import { DefaultButton, PrimaryButton, Stack, IStackTokens, IIconProps } from 'office-ui-fabric-react';
 export interface IButtonExampleProps {
   // These are set based on the toggles shown above the examples (not needed in real code)

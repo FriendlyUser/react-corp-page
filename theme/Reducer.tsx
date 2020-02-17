@@ -1,5 +1,5 @@
-import { dark } from "../theme/dark"
-import { light } from "../theme/light"
+import { dark } from "./dark"
+import { light } from "./light"
 import {
   loadTheme
 } from "office-ui-fabric-react"
