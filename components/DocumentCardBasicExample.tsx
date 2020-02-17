@@ -7,7 +7,7 @@ import {
   IDocumentCardLogoProps,
   DocumentCardDetails
 } from 'office-ui-fabric-react/lib-commonjs/DocumentCard'
-
+import { useInView } from 'react-intersection-observer'
 import { dark } from '../theme/dark'
 
 type DocumentProps = {
@@ -15,6 +15,9 @@ type DocumentProps = {
 }
 
 export const DocumentCardBasicExample: React.SFC<DocumentProps> = () => {
+  const [ref, inView] = useInView({
+    rootMargin: '-100px 0px',
+  })
   const logoProps1: IDocumentCardLogoProps = {
     logoIcon: 'BullseyeTargetEdit'
   }
@@ -28,15 +31,14 @@ export const DocumentCardBasicExample: React.SFC<DocumentProps> = () => {
     top: '-75px',
     zIndex: 5,
     display: 'inline-block',
-    maxWidth: '320px',
-    transition: 'opacity 3s'
+    maxWidth: '320px'
   }
   return (
-    <div style={{display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+    <div style={{display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
       <DocumentCard
         aria-label="Default Document Card with large file name. Created by Annie Lindqvist a few minutes ago."
         style={cardStyle}
-        className='ms-motion-scaleDownIn'
+        className={ inView ? 'ms-motion-slideDownIn' : '' }
       >
         <div style={{textAlign: 'center'}}>
           <DocumentCardLogo {...logoProps1} />
@@ -49,6 +51,7 @@ export const DocumentCardBasicExample: React.SFC<DocumentProps> = () => {
       <DocumentCard
         aria-label="Default Document Card with large file name. Created by Annie Lindqvist a few minutes ago."
         style={cardStyle}
+        className={ inView ? 'ms-motion-scaleDownIn' : '' }
       >
         <div style={{textAlign: 'center'}}>
           <DocumentCardLogo {...logoProps2} />
@@ -61,8 +64,9 @@ export const DocumentCardBasicExample: React.SFC<DocumentProps> = () => {
       <DocumentCard
         aria-label="Default Document Card with large file name. Created by Annie Lindqvist a few minutes ago."
         style={cardStyle}
+        className={ inView ? 'ms-motion-scaleDownIn' : '' }
       >
-        <div style={{textAlign: 'center'}}>
+        <div style={{textAlign: 'center'}} ref={ref}>
           <DocumentCardLogo {...logoProps3} />
         </div>
         <DocumentCardDetails>

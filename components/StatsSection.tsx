@@ -12,12 +12,16 @@ import {
 import { FontIcon } from 'office-ui-fabric-react/lib-commonjs/Icon';
 import { ImageFit } from 'office-ui-fabric-react/lib-commonjs/Image';
 import { dark } from '../theme/dark'
+import { useInView } from 'react-intersection-observer'
 type ThemeProps = {
   theme?: any
   children?: any
 }
 
-export const StatsSection: React.SFC<ThemeProps> = (props) => {
+export const StatsSection: React.FunctionComponent<ThemeProps> = (props) => {
+  const [ref, inView] = useInView({
+    rootMargin: '-100px 0px',
+  })
   const imgSrc = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
   const { theme=dark } = props
   let iconColor
@@ -61,8 +65,8 @@ export const StatsSection: React.SFC<ThemeProps> = (props) => {
             </DocumentCardDetails>
           </DocumentCard>
       </div>
-      <div style={{width: '50%', margin: 'auto', textAlign: 'left'}}>
-        <div style={{ padding: '0 10%'}}>
+      <div style={{width: '50%', margin: 'auto', textAlign: 'left'}} ref={ref}>
+        <div style={{ padding: '0 10%'}}  className={ inView ? 'box bounce-1' : '' }>
           <h4 style={titleStyle}>
             Awesome Features
           </h4>
