@@ -18,7 +18,6 @@ type ThemeProps = {
 }
 
 export const StatsSection: React.SFC<ThemeProps> = (props) => {
-  console.log(props)
   const imgSrc = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
   const { theme=dark } = props
   let iconColor
@@ -51,7 +50,7 @@ export const StatsSection: React.SFC<ThemeProps> = (props) => {
       <div style={{ margin: 'auto', textAlign: 'center' }} className='card-image-section'>
         <DocumentCard
             aria-label="Document Card."
-            style={{ marginLeft: '15px', zIndex: 5, textAlign: 'center', maxWidth: '100%' }}
+            style={{ textAlign: 'center', maxWidth: '100%' }}
           > 
             <div style={{backgroundColor: iconColor, height: 350, width: '100%', background: iconColor}}>
               <DocumentCardImage height={350} imageFit={ImageFit.cover} imageSrc={imgSrc}/>
@@ -63,7 +62,7 @@ export const StatsSection: React.SFC<ThemeProps> = (props) => {
           </DocumentCard>
       </div>
       <div style={{width: '50%', margin: 'auto', textAlign: 'left'}}>
-        <div style={{ margin: '0 10%'}}>
+        <div style={{ padding: '0 10%'}}>
           <h4 style={titleStyle}>
             Awesome Features
           </h4>

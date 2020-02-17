@@ -63,30 +63,28 @@ export const LandingHeroImageBG: React.FunctionComponent = () => {
     titleColor = '#2b88d8'
   }
   return (
-    <div className="ms-Grid-row" style={{ position: 'relative' }}>
-      <div className="ms-Grid" dir="ltr" style={{
-        position: 'absolute',
+    <div className="ms-Grid">
+      <div style={{
         zIndex: 5,
-        minHeight: '400px',
-        width: '100%',
-        top: '50px'
+        position: "absolute",
+        width: "100%"
       }}>
-        <div className="ms-Grid-col ms-sm12">
-          <h3 style={{ fontSize: '3rem', color: titleColor, textAlign:'center', marginTop: 0, marginBottom: 0 }}>
-            Corporate Landing Page
-          </h3>
-          <h5 style={{ fontSize: '1.5rem', color: titleColor, textAlign: 'center', marginTop: 0, marginBottom: 0 }}>
-            I do not have a company, but if I did I would use Corporate Landing Page.
-            <br />
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '15px' }}>
-              <ButtonDefaultExample />
-            </div>
-          </h5>
+        <div className="ms-Grid-row" dir="ltr">
+          <div className="ms-Grid-col ms-sm12">
+            <h3 style={{ fontSize: '3rem', color: titleColor, textAlign:'center', marginTop: 0, marginBottom: 0 }}>
+              Corporate Landing Page
+            </h3>
+            <h5 style={{ fontSize: '1.5rem', color: titleColor, textAlign: 'center', marginTop: 0, marginBottom: 0 }}>
+              I do not have a company, but if I did I would use Corporate Landing Page.
+              <br />
+              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '15px' }}>
+                <ButtonDefaultExample />
+              </div>
+            </h5>
+          </div>
         </div>
       </div>
       <div style={{
-        position: 'relative',
-        width: '100%',
         backgroundImage: "url(" + `${require("./landing-hero.jpg")}` + ")",
         minHeight: '400px',
         backgroundSize: 'cover',
@@ -94,8 +92,10 @@ export const LandingHeroImageBG: React.FunctionComponent = () => {
         backgroundRepeat: 'no-repeat',
         filter: 'brightness(25%)',
         clipPath: 'polygon(0 0, 100% 0%, 100% 83%, 0 100%)',
-        zIndex: 2
-      }} />
+        zIndex: 2,
+        marginLeft: '-8px',
+        marginRight: '-8px'
+      }}></div>
     </div>
   )
 }

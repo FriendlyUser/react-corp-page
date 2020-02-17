@@ -9,6 +9,7 @@ import {
 } from 'office-ui-fabric-react/lib-commonjs/DocumentCard'
 
 import { dark } from '../theme/dark'
+
 type DocumentProps = {
   theme?: any
 }
@@ -24,16 +25,18 @@ export const DocumentCardBasicExample: React.SFC<DocumentProps> = () => {
     logoIcon: 'Touch'
   }
   const cardStyle = {
-    top: '-50px',
+    top: '-75px',
     zIndex: 5,
     display: 'inline-block',
-    maxWidth: '320px'
+    maxWidth: '320px',
+    transition: 'opacity 3s'
   }
   return (
-    <div className="ms-Grid-row" style={{display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+    <div style={{display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
       <DocumentCard
         aria-label="Default Document Card with large file name. Created by Annie Lindqvist a few minutes ago."
         style={cardStyle}
+        className='ms-motion-scaleDownIn'
       >
         <div style={{textAlign: 'center'}}>
           <DocumentCardLogo {...logoProps1} />

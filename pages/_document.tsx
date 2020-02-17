@@ -24,9 +24,10 @@ export default class MyDocument extends Document<Props> {
     return (
       <html>
         <Head>       
-          <style type="text/css" dangerouslySetInnerHTML={{__html: this.props.styleTags}} />          
+          <style type="text/css" dangerouslySetInnerHTML={{__html: this.props.styleTags}} />
+          <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />         
         </Head>
-        <body>
+        <body class="ms-Fabric" dir="ltr">
           <div id='loader'></div>
           <Main />
           <NextScript />

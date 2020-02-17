@@ -4,7 +4,9 @@ body, html {
   margin: 0;
   min-height: 100vh;
 }
-
+body {
+  overflow-x: hidden;
+}
 .typewriter h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid orange; /* The typwriter cursor */
