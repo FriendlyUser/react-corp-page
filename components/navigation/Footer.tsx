@@ -10,8 +10,8 @@ export const Footer: React.FunctionComponent = () => {
   let textColor
   try {
     if (theme === dark) {
-      bgColor= '-internal-root-color'
-      textColor='black'
+      bgColor= theme.palette.white
+      textColor=theme.palette.black
     } else {
       bgColor= theme.palette.black
       textColor=theme.palette.white
