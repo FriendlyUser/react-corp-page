@@ -1,8 +1,8 @@
 
 import React, {useContext} from 'react';
-import {Context} from '../../theme/ThemeProvider'
-import {dark} from '../../theme/dark'
-import {light} from '../../theme/light'
+import {Context} from '@theme/ThemeProvider'
+import {dark} from '@theme/dark'
+import { useInView } from 'react-intersection-observer'
 import { DefaultButton, PrimaryButton, Stack, IStackTokens, IIconProps } from 'office-ui-fabric-react';
 export interface IButtonExampleProps {
   // These are set based on the toggles shown above the examples (not needed in real code)
@@ -13,41 +13,38 @@ export interface IButtonExampleProps {
 // Example formatting
 const stackTokens: IStackTokens = { childrenGap: 40 };
 
-export const ButtonDefaultExample: React.FunctionComponent<IButtonExampleProps> = props => {
+export const CallToActionButtons: React.FunctionComponent<IButtonExampleProps> = props => {
   const { disabled, checked } = props
   const gitGraph: IIconProps = { iconName: 'GitGraph' }
   const mailAlert: IIconProps = { iconName: 'MailAlert'}
+  const [ref, inView] = useInView({
+    rootMargin: '-100px 0px',
+  })
   return (
-    <Stack horizontal tokens={stackTokens}>
-      <DefaultButton
-        iconProps={gitGraph}
-        text="Github"
-        href="https://github.com"
-        allowDisabledFocus
-        disabled={disabled}
-        checked={checked} />
-      <DefaultButton
-        text="Contact"
-        iconProps={mailAlert}
-        href="mailto:davidli012345@gmail.com"
-        allowDisabledFocus
-        disabled={disabled}
-        checked={checked}
-      />
-    </Stack>
+    <div ref={ref}>
+      <Stack horizontal tokens={stackTokens}>
+        <DefaultButton
+          iconProps={gitGraph}
+          text="Github"
+          href="https://github.com"
+          allowDisabledFocus
+          disabled={disabled}
+          checked={checked}
+          className={inView ? 'animate--fade-in-left' : 'is-hidden'}
+        />
+        <DefaultButton
+          text="Contact"
+          iconProps={mailAlert}
+          href="mailto:davidli012345@gmail.com"
+          allowDisabledFocus
+          disabled={disabled}
+          checked={checked}
+          className={inView ? 'animate--fade-in-right' : 'is-hidden'}
+        />
+      </Stack>
+    </div>
   )
 }
-
-export const LandingAnimatedText: React.FunctionComponent = (props: any) => {
-    return (
-      <>
-        <h3 style={{ fontSize: '3rem', color: props.mainColor }}>
-          Corporate Landing Page
-        </h3>
-        <ButtonDefaultExample />
-      </>
-    )
-  }
 
 export const LandingHeroImageBG: React.FunctionComponent = () => {
   const [state, dispatch] = useContext(Context);
@@ -71,14 +68,14 @@ export const LandingHeroImageBG: React.FunctionComponent = () => {
       }}>
         <div className="ms-Grid-row" dir="ltr">
           <div className="ms-Grid-col ms-sm12">
-            <h3 style={{ fontSize: '3rem', color: titleColor, textAlign:'center', marginTop: 0, marginBottom: 0 }}>
+            <h3 style={{ fontSize: '3rem', color: titleColor, textAlign:'center', marginTop: '0.5rem', marginBottom: 0 }}>
               Corporate Landing Page
             </h3>
-            <h5 style={{ fontSize: '1.5rem', color: titleColor, textAlign: 'center', marginTop: 0, marginBottom: 0 }}>
+            <h5 style={{ fontSize: '1.5rem', color: titleColor, textAlign: 'center', marginTop: 0, marginBottom: '10px' }}>
               I do not have a company, but if I did I would use Corporate Landing Page.
               <br />
-              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '15px' }}>
-                <ButtonDefaultExample />
+              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                <CallToActionButtons />
               </div>
             </h5>
           </div>

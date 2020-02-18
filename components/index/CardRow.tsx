@@ -8,7 +8,7 @@ import {
   DocumentCardDetails
 } from 'office-ui-fabric-react/lib-commonjs/DocumentCard'
 import { useInView } from 'react-intersection-observer'
-import { dark } from '../../theme/dark'
+import { dark } from '@theme/dark'
 
 type DocumentProps = {
   theme?: any
@@ -38,40 +38,46 @@ export const DocumentCardBasicExample: React.SFC<DocumentProps> = () => {
       <DocumentCard
         aria-label="Default Document Card with large file name. Created by Annie Lindqvist a few minutes ago."
         style={cardStyle}
-        className={ inView ? 'ms-motion-slideDownIn' : '' }
       >
         <div style={{textAlign: 'center'}}>
           <DocumentCardLogo {...logoProps1} />
         </div>
         <DocumentCardDetails>
-          <DocumentCardTitle title="Providing Value" shouldTruncate />
-          <DocumentCardTitle title="Committed to provided consistent and quality service to all our customers" showAsSecondaryTitle />
+          <div className={ inView ? 'animate--bounce-up' : '' }>
+            <br/>
+            <DocumentCardTitle title="Providing Value" shouldTruncate />
+            <DocumentCardTitle title="Committed to provided consistent and quality service to all our customers" showAsSecondaryTitle />
+          </div>
         </DocumentCardDetails>
       </DocumentCard>
       <DocumentCard
         aria-label="Default Document Card with large file name. Created by Annie Lindqvist a few minutes ago."
         style={cardStyle}
-        className={ inView ? 'ms-motion-scaleDownIn' : '' }
       >
         <div style={{textAlign: 'center'}}>
           <DocumentCardLogo {...logoProps2} />
         </div>
         <DocumentCardDetails>
-          <DocumentCardTitle title="Affordable" shouldTruncate />
-          <DocumentCardTitle title="A fantastic service that your business needs today." showAsSecondaryTitle />
+          <div className={ inView ? 'animate--bounce-up' : '' }>
+            <br/>
+            <DocumentCardTitle title="Affordable" shouldTruncate />
+            <DocumentCardTitle title="A fantastic service that your business needs today." showAsSecondaryTitle />
+          </div>
         </DocumentCardDetails>
       </DocumentCard>
       <DocumentCard
         aria-label="Default Document Card with large file name. Created by Annie Lindqvist a few minutes ago."
         style={cardStyle}
-        className={ inView ? 'ms-motion-scaleDownIn' : '' }
       >
         <div style={{textAlign: 'center'}} ref={ref}>
           <DocumentCardLogo {...logoProps3} />
         </div>
         <DocumentCardDetails>
-          <DocumentCardTitle title="Toggably" shouldTruncate />
-          <DocumentCardTitle title="Companies that make their logos toggles need toggable websites." showAsSecondaryTitle />
+          <div className={ inView ? 'animate--bounce-up' : '' }>
+            <br/>
+            <DocumentCardTitle title="Toggably" shouldTruncate />
+            <DocumentCardTitle title="Companies that make their logos toggles need toggable websites." showAsSecondaryTitle />
+          </div>
         </DocumentCardDetails>
       </DocumentCard>
     </div>

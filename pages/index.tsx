@@ -15,6 +15,9 @@ const Index: React.FC = (props: any) => {
       <DocumentCardBasicExample theme={theme}/>
       <br />
       <StatsSection theme={theme} />
+      <br />
+      <br />
+      <br />
     </Layout>
   )
 }

@@ -11,7 +11,7 @@ import {
 } from 'office-ui-fabric-react/lib-commonjs/DocumentCard'
 import { FontIcon } from 'office-ui-fabric-react/lib-commonjs/Icon';
 import { ImageFit } from 'office-ui-fabric-react/lib-commonjs/Image';
-import { dark } from '../../theme/dark'
+import { dark } from '@theme/dark'
 import { useInView } from 'react-intersection-observer'
 type ThemeProps = {
   theme?: any
@@ -60,20 +60,24 @@ export const StatsSection: React.FunctionComponent<ThemeProps> = (props) => {
               <DocumentCardImage height={350} imageFit={ImageFit.cover} imageSrc={imgSrc}/>
             </div>
             <DocumentCardDetails>
-              <DocumentCardTitle title="Providing Value" shouldTruncate />
-              <DocumentCardTitle title="Committed to provided consistent and quality service to all our customers" showAsSecondaryTitle />
+              <div className={ inView ? 'animate--fade-in-left' : '' }>
+                <DocumentCardTitle title="Providing Value" shouldTruncate />
+                <DocumentCardTitle title="Committed to provided consistent and quality service to all our customers" showAsSecondaryTitle />
+              </div>
             </DocumentCardDetails>
           </DocumentCard>
       </div>
       <div style={{width: '50%', margin: 'auto', textAlign: 'left'}} ref={ref}>
-        <div style={{ padding: '0 10%'}}  className={ inView ? 'box bounce-1' : '' }>
-          <h4 style={titleStyle}>
-            Awesome Features
-          </h4>
+        <div style={{ padding: '0 10%', marginTop: '50px'}}>
+          <div className={ inView ? 'animate--fade-in-left' : ''}>
+            <h4 style={titleStyle}>
+              Awesome Features
+            </h4>
 
-          <span style={subtitleStyle}>
-            We provide excellent software engineers on demand and can deliver projects on time and on budget.
-          </span>
+            <span style={subtitleStyle}>
+              We provide excellent software engineers on demand and can deliver projects on time and on budget.
+            </span>
+          </div>
 
           <p style={iconStyle}><FontIcon iconName="Globe" /> Work with our global team</p>
           <p style={iconStyle}><FontIcon iconName="IncidentTriangle" /> Swift Bug Squashing</p>

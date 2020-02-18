@@ -2,7 +2,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["./components/*"]
+      "@components/*": ["./components/*"],
+      "@layout/*": ["./layouts/*"],
+      "@pages/*": ["./pages/*"],
+      "@theme/*": ["./theme/*"],
     },
     "allowJs": true,
     "allowSyntheticDefaultImports": true,

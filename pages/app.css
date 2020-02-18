@@ -66,3 +66,133 @@ body {
   50%  { transform: translateY(-100px); }
   100% { transform: translateY(0); }
 }
+
+/* Animations for the landing page image */
+.animate--bounce-up {
+  animation: bounce-up 2s;
+  -moz-animation: bounce-up 2s; /* Firefox */
+  -webkit-animation: bounce-up 2s; /* Safari and Chrome */
+  -o-animation: bounce-up 2s; /* Opera */
+}
+
+@keyframes bounce-up {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+  40% {transform: translateY(-25px);} 
+  60% {transform: translateY(-12.5px);} 
+} 
+
+@-moz-keyframes bounce-up { /* Firefox */
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+  40% {transform: translateY(-25px);} 
+  60% {transform: translateY(-12.5px);} 
+}
+@-webkit-keyframes bounce-up { /* Safari and Chrome */
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+  40% {transform: translateY(-25px);} 
+  60% {transform: translateY(-12.5px);} 
+}
+@-o-keyframes bounce-up { /* Opera */
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+  40% {transform: translateY(-25px);} 
+  60% {transform: translateY(-12.5px);}  
+}
+
+/* Animations for stats section */
+.animate--fade-in-left {
+  animation: fadein-left 2s;
+  -moz-animation: fadein-left 2s; /* Firefox */
+  -webkit-animation: fadein-left 2s; /* Safari and Chrome */
+  -o-animation: fadein-left 2s; /* Opera */
+}
+@keyframes fadein-left {
+  from {
+      opacity:0;
+      transform: translateX(-40px);
+  }
+  to {
+      opacity:1;
+      transform: translateX(0px);
+  }
+}
+@-moz-keyframes fadein-left { /* Firefox */
+  from {
+      opacity: 0;
+      transform: translateX(-40px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
+@-webkit-keyframes fadein-left { /* Safari and Chrome */
+  from {
+      opacity: 0;
+      transform: translateX(-40px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
+@-o-keyframes fadein-left { /* Opera */
+  from {
+      opacity: 0;
+      transform: translateX(-40px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
+
+.animate--fade-in-right {
+  animation: fadein-right 2s;
+  -moz-animation: fadein-right 2s; /* Firefox */
+  -webkit-animation: fadein-right 2s; /* Safari and Chrome */
+  -o-animation: fadein-right 2s; /* Opera */
+}
+@keyframes fadein-right {
+  from {
+      opacity:0;
+      transform: translateX(40px);
+  }
+  to {
+      opacity:1;
+      transform: translateX(0px);
+  }
+}
+@-moz-keyframes fadein-right { /* Firefox */
+  from {
+      opacity: 0;
+      transform: translateX(40px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
+@-webkit-keyframes fadein-right { /* Safari and Chrome */
+  from {
+      opacity: 0;
+      transform: translateX(40px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
+@-o-keyframes fadein-right { /* Opera */
+  from {
+      opacity: 0;
+      transform: translateX(40px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
+
+
+.is-hidden {
+  display: none;
+}
