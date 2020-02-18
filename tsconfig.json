@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@layout/*": ["./layouts/*"],
+      "@pages/*": ["./pages/*"],
+      "@theme/*": ["./theme/*"],
+    },
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",

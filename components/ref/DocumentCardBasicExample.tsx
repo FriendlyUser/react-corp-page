@@ -8,7 +8,7 @@ import {
   DocumentCardDetails
 } from 'office-ui-fabric-react/lib-commonjs/DocumentCard'
 
-import { dark } from '../theme/dark'
+import { dark } from '@theme/dark'
 type DocumentProps = {
   theme?: any
 }

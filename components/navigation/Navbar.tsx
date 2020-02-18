@@ -9,12 +9,12 @@ import {
   IContextualMenuStyles
 } from 'office-ui-fabric-react/lib-commonjs/ContextualMenu'
 
-import { dark } from "../theme/dark"
-import { light } from "../theme/light"
+import { dark } from "@theme/dark"
+import { light } from "@theme/light"
 import { getTheme } from 'office-ui-fabric-react/lib-commonjs/Styling'
-import {Context} from './ThemeProvider'
+import {Context} from '@theme/ThemeProvider'
 export const Navbar: React.FunctionComponent = () => {
-  const [state, dispatch] = useContext(Context);
+  const [state, dispatch] = useContext(Context)
   let currentTheme = dark
   let theme = getTheme()
   // use effects
