@@ -5,7 +5,7 @@ type CarouselSlideProps = {
   index: number
   activeIndex: number
   slide: Slide,
-  textColor?: string
+  textColor: string
 }
 
 const SlideStyles: React.CSSProperties = {
@@ -20,13 +20,14 @@ const SlideStyles: React.CSSProperties = {
 export class CarouselSlide extends React.Component<CarouselSlideProps> {
   render() {
     const AuthorStyles: React.CSSProperties = {
-
+      color: this.props.textColor
     }
     const SourceStyles: React.CSSProperties = {
-
+      color: this.props.textColor
     }
     const ContentStyles: React.CSSProperties = {
-
+      color: this.props.textColor,
+      marginBottom: '19px'
     }
     return (
       <li
@@ -37,16 +38,16 @@ export class CarouselSlide extends React.Component<CarouselSlideProps> {
         }
         style={SlideStyles}
       >
-        <p className="carousel-slide__content" style={{marginBottom: '19px'}}>
+        <p className="carousel-slide__content" style={ContentStyles}>
           {this.props.slide.content}
         </p>
 
-        <p>
-          <strong className="carousel-slide__author">
+        <p style={AuthorStyles}>
+          <strong className="carousel-slide__author" style={AuthorStyles}>
             {this.props.slide.author}
           </strong>,
           {" "}
-          <small className="carousel-slide__source">
+          <small className="carousel-slide__source" style={SourceStyles}>
             {this.props.slide.source}
           </small>
         </p>

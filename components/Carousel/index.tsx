@@ -88,7 +88,7 @@ export class Carousel extends Component<CarouselProps,CarouselState>  {
     try {
       if (theme === dark) {
         indicatorColor= theme.palette.themePrimary
-        textColor='-internal-root-color'
+        textColor=theme.palette.white
       } else {
         indicatorColor= theme.palette.white
         textColor=theme.palette.themePrimary
@@ -107,6 +107,7 @@ export class Carousel extends Component<CarouselProps,CarouselState>  {
               index={index}
               activeIndex={this.state.activeIndex}
               slide={slide}
+              textColor={textColor}
             />
           )}
         </ul>
