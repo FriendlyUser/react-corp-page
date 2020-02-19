@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import {Context} from '@theme/ThemeProvider'
 import { dark } from '@theme/dark'
 export const Footer: React.FunctionComponent = () => {
@@ -46,6 +46,15 @@ export const Footer: React.FunctionComponent = () => {
       backgroundColor: bgColor
     }}>
      <div style={cardStyle}>
+       <h6 style={headingStyle}>© React Corporate Landing Page</h6>
+       <p style={paragraphStyle}>
+         Last Updated  {year}
+       </p>
+     </div>
+     <div style={cardStyle}>
+       <h6 style={headingStyle}>Explore</h6>
+     </div>
+     <div style={cardStyle}>
        <h6 style={headingStyle}>Contact Us</h6>
        <form
           action="https://formspree.io/FORM_ID"
@@ -66,16 +75,7 @@ export const Footer: React.FunctionComponent = () => {
           <br />
           <input type="submit" value="Send" />
         </form>
-     </div>
-     <div style={cardStyle}>
-       <h6 style={headingStyle}>© React Corporate Landing Page</h6>
-       <p style={paragraphStyle}>
-         Last Updated  {year}
-       </p>
-     </div>
-     <div style={cardStyle}>
-       <h6 style={headingStyle}>Explore</h6>
-     </div>
+      </div>
     </div>
   )
 }

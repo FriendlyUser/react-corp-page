@@ -7,6 +7,9 @@ Note I'm aware this website is less than optimial on mobile devices, I think thi
 * Animations
 * Nextjs + Typescript
 * Intersection API (love react-intersection-observer)
+* More complex Typescript based React Components (See Carousel)
+
+Although I had experience using Typescript on the backend, Typescript + React had a bit of a learning curve.
 
 The is mainly a learning project for me, learning how to add key animations and use css in js via react.
 Learned don't use git lfs if you are serving files from a static site generator, only binaries, not required to run repo.
