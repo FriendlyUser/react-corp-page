@@ -196,3 +196,47 @@ body {
 .is-hidden {
   display: none;
 }
+
+/* carousel Logic*/
+.carousel ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.carousel {
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  .carousel__slide {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+}
+
+.carousel__slide--active {
+  display: block !important;
+}
+
+.carousel-slide__source {
+  font-style: italic;
+  color: #888;
+}
+
+.carousel__arrow:focus {
+  outline: 0;
+}
+.carousel__arrow:hover {
+  opacity: 0.5;
+}
+
+.carousel__indicators li:nth-of-type(n + 2) {
+  margin-left: 9px;
+}
+
+.carousel__indicator:hover {
+  opacity: 0.5 !important;
+}
+.carousel__indicator--active:hover {
+  opacity: 0.75 !important;
+}
