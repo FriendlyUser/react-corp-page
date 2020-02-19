@@ -8,6 +8,7 @@ import {carouselSlidesData} from '@components/Carousel/testData'
 import Layout from '../layouts/Layout'
 import { Context } from '@theme/ThemeProvider'
 import { dark } from "@theme/dark"
+
 const Index: React.FC = (props: any) => {
   const [state, dispatch] = useContext(Context);
   const {theme=dark} = state

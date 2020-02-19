@@ -23,9 +23,7 @@ export default class MyDocument extends Document<Props> {
   render() {
     return (
       <html>
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-          <meta name="viewport" content="width=400, initial-scale=1"></meta>
+        <Head>       
           <style type="text/css" dangerouslySetInnerHTML={{__html: this.props.styleTags}} />
           <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />         
         </Head>
