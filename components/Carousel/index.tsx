@@ -97,10 +97,11 @@ export class Carousel extends Component<CarouselProps,CarouselState>  {
       }
     } catch(err) {
       indicatorColor = '#333333'
+      textColor = 'black'
     }
     return (
       <>
-      <h3>Testimonials</h3>
+      <h3 style={{fontSize: '2em', textAlign: 'center', color: textColor}}>Testimonials</h3>
       <div className="carousel">
         <CarouselLeftArrow onClick={(e: Event) => this.goToPrevSlide(e)} arrowColor={indicatorColor}/>
 
