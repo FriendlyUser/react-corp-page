@@ -218,9 +218,8 @@ body {
   display: block !important;
 }
 
-.carousel-slide__source {
+.carousel-slide__job-title {
   font-style: italic;
-  color: #888;
 }
 
 .carousel__arrow:focus {

@@ -14,9 +14,11 @@ type CarouselState = {
 }
 
 export type Slide = {
-  author: string
+  fullName: string
+  authorImage: string
+  jobTitle: string
   content: string
-  source: string
+  stars: number
 }
 
 // Carousel wrapper component
@@ -88,7 +90,7 @@ export class Carousel extends Component<CarouselProps,CarouselState>  {
     try {
       if (theme === dark) {
         indicatorColor= theme.palette.themePrimary
-        textColor=theme.palette.white
+        textColor=theme.palette.neutralColor
       } else {
         indicatorColor= theme.palette.white
         textColor=theme.palette.themePrimary
@@ -127,6 +129,6 @@ export class Carousel extends Component<CarouselProps,CarouselState>  {
           )}
         </ul>
       </div>
-    );
+    )
   }
 }

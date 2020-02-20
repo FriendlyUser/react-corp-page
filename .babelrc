@@ -7,7 +7,6 @@
         "root": ["./"],
         "alias": {
           "@components": "./components",
-          "@layout/*": "./layouts",
           "@pages/*": "./pages",
           "@theme": "./theme"
         }
