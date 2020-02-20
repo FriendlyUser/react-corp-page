@@ -99,6 +99,8 @@ export class Carousel extends Component<CarouselProps,CarouselState>  {
       indicatorColor = '#333333'
     }
     return (
+      <>
+      <h3>Testimonials</h3>
       <div className="carousel">
         <CarouselLeftArrow onClick={(e: Event) => this.goToPrevSlide(e)} arrowColor={indicatorColor}/>
 
@@ -129,6 +131,7 @@ export class Carousel extends Component<CarouselProps,CarouselState>  {
           )}
         </ul>
       </div>
+      </>
     )
   }
 }
