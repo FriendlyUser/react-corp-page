@@ -19,7 +19,7 @@ export const dark = {
     neutralTertiary: "#fcf7f7",
     neutralSecondary: "#fcf8f8",
     neutralPrimaryAlt: "#fdf9f9",
-    neutralPrimary: "#f9f2f2",
+    neutralPrimary: "#0078d4",
     neutralDark: "#fefcfc",
     black: "#fefdfd",
     white: "#000000"
