@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react'
+import React from 'react'
 import {
   DocumentCard,
   DocumentCardActivity,
@@ -36,7 +36,7 @@ export const DocumentCardBasicExample: React.SFC<DocumentProps> = () => {
   return (
     <div style={{display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
       <DocumentCard
-        aria-label="Default Document Card with large file name. Created by Annie Lindqvist a few minutes ago."
+        aria-label="Providing Value."
         style={cardStyle}
       >
         <div style={{textAlign: 'center'}}>
@@ -51,7 +51,7 @@ export const DocumentCardBasicExample: React.SFC<DocumentProps> = () => {
         </DocumentCardDetails>
       </DocumentCard>
       <DocumentCard
-        aria-label="Default Document Card with large file name. Created by Annie Lindqvist a few minutes ago."
+        aria-label="A fantastic service that your business needs today."
         style={cardStyle}
       >
         <div style={{textAlign: 'center'}}>
@@ -66,7 +66,7 @@ export const DocumentCardBasicExample: React.SFC<DocumentProps> = () => {
         </DocumentCardDetails>
       </DocumentCard>
       <DocumentCard
-        aria-label="Default Document Card with large file name. Created by Annie Lindqvist a few minutes ago."
+        aria-label="Companies that make their logos toggles need toggable websites."
         style={cardStyle}
       >
         <div style={{textAlign: 'center'}} ref={ref}>

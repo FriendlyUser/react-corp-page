@@ -2,7 +2,7 @@ import React from 'react'
 import { Slide } from './index'
 import { Rating } from 'office-ui-fabric-react/lib-commonjs/Rating'
 import { FontIcon } from 'office-ui-fabric-react/lib-commonjs/Icon'
-import { mergeStyles } from 'office-ui-fabric-react/lib-commonjs/Styling';
+import { mergeStyles } from 'office-ui-fabric-react/lib-commonjs/Styling'
 
 type CarouselSlideProps = {
   key: number

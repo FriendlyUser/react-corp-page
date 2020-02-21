@@ -3,6 +3,7 @@ import { LandingHeroImageBG } from '@components/index/LandingImage'
 import { DocumentCardBasicExample } from '@components/index/CardRow'
 import { StatsSection } from "@components/index/StatsSection"
 import  { Carousel } from '@components/Carousel/index'
+import  { PricingTable } from '@components/index/PricingTable'
 import { carouselSlidesData } from '@components/Carousel/testimonyData'
 // next cannot @layouts find this, maybe the module is already defined???
 import Layout from '../layouts/Layout'
@@ -23,6 +24,9 @@ const Index: React.FC = (props: any) => {
       <br />
       <Carousel slides={carouselSlidesData} theme={theme}/>
       <br />
+      <br />
+      <br />
+      <PricingTable />
       <br />
       <br />
     </Layout>
