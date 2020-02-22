@@ -29,7 +29,8 @@ export default class MyDocument extends Document<Props> {
         </Head>
         <body className="ms-Fabric" dir="ltr">
           <div id='loader'></div>
-          <Main />
+          <Main>
+          </Main>
           <NextScript />
         </body>
       </html>

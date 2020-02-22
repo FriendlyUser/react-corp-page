@@ -9,7 +9,7 @@ import {
   IDocumentCardPreviewProps,
   DocumentCardImage
 } from 'office-ui-fabric-react/lib-commonjs/DocumentCard'
-import { ImageFit } from 'office-ui-fabric-react/lib-commonjs/Image';
+import { ImageFit } from 'office-ui-fabric-react/lib-commonjs/Image'
 export const InfoRow: React.FunctionComponent = () => {
   const logoProps: IDocumentCardLogoProps = {
     logoIcon: 'OutlookLogo'

@@ -9,8 +9,8 @@ import {
   IDocumentCardPreviewProps,
   DocumentCardImage
 } from 'office-ui-fabric-react/lib-commonjs/DocumentCard'
-import { FontIcon } from 'office-ui-fabric-react/lib-commonjs/Icon';
-import { ImageFit } from 'office-ui-fabric-react/lib-commonjs/Image';
+import { FontIcon } from 'office-ui-fabric-react/lib-commonjs/Icon'
+import { ImageFit } from 'office-ui-fabric-react/lib-commonjs/Image'
 import { dark } from '@theme/dark'
 import { useInView } from 'react-intersection-observer'
 type ThemeProps = {
